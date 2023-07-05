@@ -14,7 +14,6 @@ export default function Home(props: IHome) {
   return (
     <View justifyContent="center" alignItems="center" flex={1}>
       <Text>Home</Text>
-      <Button>Submit</Button>
     </View>
   );
 }
