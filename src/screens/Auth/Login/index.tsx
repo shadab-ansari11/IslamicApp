@@ -12,7 +12,7 @@ export default function Login(props:ILogin) {
   return (
     <View justifyContent="center" alignItems="center" flex={1}>
          <Text>Login</Text>
-      <Button size="sm" width={100} onPress={()=> navigation.navigate('DrawerNav')}>Submit</Button>
+      <Button size="sm" width={100} onPress={()=> navigation.navigate('DrawerNav')}>Home</Button>
     </View>
   );
 }
