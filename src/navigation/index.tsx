@@ -4,16 +4,16 @@ import {NavigationContainer} from '@react-navigation/native';
 import React from 'react';
 
 //screen
+import SplashScreen from '../components/SplashScreen';
 import Login from '../screens/Auth/Login';
-import Home from '../screens/Home';
 import DrawerNav from '../navigation/DrawerNav';
-import SplashScreen from '../screens/SplashScreen';
+import Home from '../screens/Home';
 
 export type RootStackParamList = {
+  SplashScreen: undefined;
     Login: undefined;
     DrawerNav: undefined;
     Home: undefined;
-    SplashScreen: undefined;
 };
   const Stack = createNativeStackNavigator<RootStackParamList>();
 
