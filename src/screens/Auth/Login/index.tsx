@@ -17,17 +17,6 @@ import Toast from 'react-native-toast-message';
 interface ILoginProps {
   navigation: any;
 }
-// const initValues: ILogin =
-//   __DEV__
-//     ?
-//     {
-//       email: 'shadab@gmail.com',
-//       password: '123456',
-//     }
-//     : {
-//       email: '',
-//       password: '',
-//     };
 
 export default function Login(props: ILoginProps) {
   const { navigation } = props;
