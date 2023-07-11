@@ -33,7 +33,7 @@ function AnimatedLottie(props: IAnimatedLottie) {
                     <Text
                         textTransform="uppercase"
                         textAlign="center"
-                        color="#300759"
+                        color="#fff"
                         fontSize={30}
                         fontWeight="bold">
                         {text}

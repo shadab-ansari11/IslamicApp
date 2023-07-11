@@ -8,20 +8,22 @@ import * as Yup from 'yup';
 import {FormikHelpers, useFormik} from 'formik';
 
 export interface ILogin {
+  fname:string;
   email: string;
   password: string;
 }
 
 const defaultValues: ILogin = {
+  fname:'',
   email: '',
   password: '',
 };
 
 const schema = Yup.object().shape({
   email: Yup.string()
-    .required('Please enter email address')
-    .email('Please enter a valid email address.'),
-
+  .required('Please enter email address')
+  .email('Please enter a valid email address.'),
+  fname: Yup.string().required('Please enter First Name'),
   password: Yup.string().required('Please enter password'),
 });
 

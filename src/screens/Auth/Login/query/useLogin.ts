@@ -18,7 +18,7 @@ export interface ILoginResponse {
 const useAdminLogin = () => {
   const tryLogin = async (values:ILoginRequest) => {
     try {
-      const url = "https://api.escuelajs.co/api/v1/auth/login";
+      const url = "";
       const response: ILoginResponse = await client.post(url, values);
       console.log("response",JSON.stringify(response,null,2))
       if (response?.statusCode === 200) {

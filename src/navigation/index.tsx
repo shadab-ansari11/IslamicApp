@@ -7,12 +7,12 @@ import React from 'react';
 import SplashScreen from '../components/SplashScreen';
 import Login from '../screens/Auth/Login';
 import DrawerNav from '../navigation/DrawerNav';
-import Home from '../screens/Home';
+import Home from '../screens/Home/Home';
 
 export type RootStackParamList = {
   SplashScreen: undefined;
     Login: undefined;
-    DrawerNav: undefined;
+    DrawerNav: {values:any};
     Home: undefined;
 };
   const Stack = createNativeStackNavigator<RootStackParamList>();

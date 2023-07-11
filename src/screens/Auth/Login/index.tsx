@@ -35,20 +35,22 @@ export default function Login(props: ILoginProps) {
     }).start();
   }, []);
 
-  const initValues: ILogin = 
+  const initValues: ILogin =
   __DEV__
   ?
   {
+    fname: 'Shadab Ansari',
     email: 'shadab@gmail.com',
     password: '123456',
   }
   : {
+    fname: '',
     email: '',
     password: '',
   };
  
   const onSubmit = (values: ILogin) => {
-    if(values.email != "shadab@gmail.com" || values.password != "123456"){
+    if(values.fname != values.fname || values.email != "shadab@gmail.com" || values.password != "123456"){
       Toast.show({
         type: 'error',
         text1: 'Login Failed',
@@ -63,7 +65,7 @@ export default function Login(props: ILoginProps) {
       });
       setTimeout(() => {
           setVisible(false);
-          navigation.navigate('DrawerNav');
+          navigation.navigate('DrawerNav',{values});
         }, 3000);
     };
     // if(values){
@@ -92,13 +94,14 @@ export default function Login(props: ILoginProps) {
   } = formik;
 
   return (
-    <View>
+    
+    <View backgroundColor="#09223a" height={"100%"}>
       {visible ? (
         <AnimatedLottie text="quran app" />
       ) : (
        <>
       <View justifyContent="center" alignItems="center" mt={65} >
-        <Text color="#300759" fontSize={30} fontWeight="bold">Quran App</Text>
+        <Text color="#fff" fontSize={30} fontWeight="bold">Quran App</Text>
         <Text color="#0DB440" fontSize={20} fontWeight="bold">Asalamu Alaikum !!!</Text>
       </View>
 
@@ -107,6 +110,18 @@ export default function Login(props: ILoginProps) {
       </View>
 
       <View justifyContent="center" alignItems="center"  >
+        <View width={'100%'} px={16}>
+          <TextField
+            mt={5}
+            placeholder="First Name"
+            error={touched.fname ? errors.fname : undefined}
+            maxLength={35} 
+            value={values.fname}
+            onBlur={handleBlur('fname')}
+            onChangeText={handleChange('fname')}
+            width={'100%'}
+          />
+        </View>
         <View width={'100%'} px={16}>
           <TextField
             mt={5}

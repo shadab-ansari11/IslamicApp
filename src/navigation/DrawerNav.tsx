@@ -20,7 +20,7 @@ import {
   NativeStackScreenProps,
 } from '@react-navigation/native-stack';
 import {RootStackParamList} from '.';
-import Home from '../screens/Home';
+import Home from '../screens/Home/Home';
 import About from '../screens/About';
 import DrawerWithButtons from './DrawerWithButtons';
 
@@ -47,7 +47,6 @@ export type AppNavigationType<T extends keyof DrawerParamList> =
     NativeStackNavigationProp<RootStackParamList>
   >;
 export type DrawerNavigationType = DrawerNavigationProp<DrawerParamList, any>
-
 
 const Drawer = createDrawerNavigator<DrawerParamList>();
 

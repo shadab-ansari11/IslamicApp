@@ -15,11 +15,11 @@ function SplashScreen(props: ISplashScreen) {
   },4000)
  
     return (
-        <View backgroundColor="#DAD0E1" width={'100%'} height={'100%'}>
+        <View backgroundColor="#09223a" width={'100%'} height={'100%'}>
             <Text
                 textTransform="uppercase"
                 textAlign="center"
-                color="#300759"
+                color="#fff"
                 fontSize={30}
                 fontWeight="bold"
                 mt={100}
@@ -29,7 +29,7 @@ function SplashScreen(props: ISplashScreen) {
             <View justifyContent="center" alignItems="center">
                 <Text
                     textAlign="center"
-                    color="#000"
+                    color="#0DB440"
                     fontSize={18}
                     width={200}
                     fontWeight="bold"
