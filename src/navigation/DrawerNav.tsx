@@ -21,12 +21,12 @@ import {
 } from '@react-navigation/native-stack';
 import {RootStackParamList} from '.';
 import Home from '../screens/Home/Home';
-import About from '../screens/About';
+import QuranTranslation from '../screens/Quran-Translation';
 import DrawerWithButtons from './DrawerWithButtons';
 
 export type DrawerParamList = {
   Home: undefined;
-  About: undefined;
+  QuranTranslation: undefined;
 };
 
 export type DrawerNavProps<T extends keyof DrawerParamList> =
@@ -58,7 +58,7 @@ function DrawerNav() {
         headerShown: false,
       }}>
       <Drawer.Screen component={Home} name="Home" />
-      <Drawer.Screen component={About} name="About" />
+      <Drawer.Screen component={QuranTranslation} name="QuranTranslation" />
     </Drawer.Navigator>
   );
 }
