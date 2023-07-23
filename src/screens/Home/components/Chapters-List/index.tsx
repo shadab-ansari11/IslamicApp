@@ -11,12 +11,14 @@ interface IChaptersList {
     item: any
 }
 
-const handleSura = (id:number) =>{
-    console.log("id--->",id)
-};
 
 function ChaptersList(props: IChaptersList) {
     const { navigation, item } = props;
+
+    const handleSura = (id:number) =>{
+        console.log("id--->",id)
+        navigation.navigate('QuranTranslation');
+    };
 
     return (
         <View>
@@ -38,12 +40,12 @@ function ChaptersList(props: IChaptersList) {
                     display="flex"
                     flexDirection="row">
                     <View
-                        backgroundColor="#ffffffbf"
+                        backgroundColor="#fff"
                         width="40px"
                         height="40px"
                         borderRadius={360}
                         justifyContent="center" alignSelf="center">
-                        <Text textAlign="center"  mt={1} color="#0DB440" fontWeight="bold">{item?.id}</Text>
+                        <Text textAlign="center"  color="#0DB440" fontSize={20} fontWeight="bold">{item?.id}</Text>
                     </View>
                     <View ml={3}>
                         <Text mt={1} color="#fff" fontSize={18} fontWeight="bold">{item?.name_simple}</Text>

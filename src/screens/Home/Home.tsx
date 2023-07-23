@@ -12,6 +12,8 @@ import { SafeAreaView, ImageBackground, TouchableOpacity, FlatList, ListRenderIt
 import { ILogin } from 'Auth/Login/query/useLoginForm';
 import { useFetchHome } from "./query/useFetchHome";
 import ChaptersList from './components/Chapters-List';
+import Header from '../../components/Header';
+import HijriDate from '../../components/Hijri-Date';
 
 interface IHome {
   navigation: any;
@@ -37,21 +39,14 @@ export default function Home(props: IHome) {
     data: chaptersList,refetch,isLoading
   } = useFetchHome();
   return (
-    <SafeAreaView style={{marginBottom:10}}>
+    <SafeAreaView>
       <ImageBackground resizeMode="stretch" style={{ width: "100%", height: "100%" }}
         source={require("../../assets/background-Img/islamic.jpg")}>
+          <Header navigation={navigation} screenName='Quran App' isDrawer />
        <ScrollView>
       <View mt={8}>
-        <Text
-          textTransform="uppercase"
-          textAlign="center"
-          color="#000"
-          fontSize={25}
-          fontWeight="bold">
-          Quran App
-        </Text>
-        <View m={5} justifyContent="center"
-          alignSelf="center" width={"80%"}>
+        <View mb={3} justifyContent="center"
+          alignSelf="center" width={"85%"}>
           <Text fontSize={16} color="#000" fontWeight="bold">Asalamu Alaikum !!!</Text>
           <Text fontSize={20} color="#000" fontWeight="bold">{loginName.fname}</Text>
         </View>
@@ -64,6 +59,7 @@ export default function Home(props: IHome) {
         padding={5}
         borderRadius={20} 
         flexDirection="row">
+           
         <View
           flexDirection="column"
           justifyContent="center"
@@ -76,14 +72,16 @@ export default function Home(props: IHome) {
             <Text color="#fff" fontWeight="bold" fontSize={20}>The Noble Quran</Text>
             <Text color="#fff" fontSize={12}>Popular Searches</Text>
           </View>
+        <HijriDate /> 
         </View>
-        <View mt={3} justifyContent="flex-end" alignItems="flex-end">
+        <View  justifyContent="flex-end" alignItems="flex-end">
           <Image
             source={require('../../assets/SplashScreen/mosque-logo.png')}
             alt="mosque"
             style={{ width: 80, height: 80, }}
           />
         </View>
+       
       </View>
       <View>
        <FlatList
@@ -93,7 +91,7 @@ export default function Home(props: IHome) {
           contentContainerStyle={styles.listContent}
           ListEmptyComponent={
             <>
-              <View p={5} alignItems="center">
+              <View p={5}   alignItems="center">
                 <Text>No Contact Found</Text>
               </View>
             </>
